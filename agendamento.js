@@ -39,10 +39,22 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    fetch('data.json')
-        .then(response => response.json())
-        .then(data => {
-            const professionalData = data.find(p => p.profissional === professionalName);
+    // Função para buscar dados de um arquivo de forma segura
+    const fetchData = async (url) => {
+        const response = await fetch(url);
+        if (!response.ok) {
+            console.error(`Falha ao carregar ${url}`);
+            return []; // Retorna um array vazio em caso de erro para não quebrar a aplicação
+        }
+        return response.json();
+    };
+
+    // Carrega os dados de ambos os arquivos em paralelo
+    Promise.all([fetchData('data.json'), fetchData('unhas.json')])
+        .then(([mainData, unhasData]) => {
+            // Junta os dados dos dois arquivos em uma única lista
+            const allProfessionals = [...mainData, ...unhasData];
+            const professionalData = allProfessionals.find(p => p.profissional === professionalName);
 
             if (!professionalData) {
                 document.querySelector('.agendamento-container').innerHTML = '<h1>Erro: Profissional não encontrada.</h1>';
