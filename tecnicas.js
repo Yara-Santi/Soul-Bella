@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let imagePaths = [];
         for (let i = 1; i <= totalImages; i++) {
-            // Corrigido para usar a extensão .jpg, que é o padrão das suas imagens
-            imagePaths.push(`images/${imagePrefix}-${i}.jpg`);
+            // Corrigido para usar a extensão .JPG, conforme os arquivos no repositório
+            imagePaths.push(`images/${imagePrefix}-${i}.JPG`);
         }
 
         if (randomize) {

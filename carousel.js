@@ -4,7 +4,7 @@ function initializeCarousel(containerSelector, imagePrefix, totalImages, randomi
 
     const images = [];
     for (let i = 1; i <= totalImages; i++) {
-        images.push(`images/${imagePrefix}-${i}.jpg`);
+        images.push(`images/${imagePrefix}-${i}.JPG`);
     }
 
     // Se a opção 'randomize' for verdadeira, embaralha as imagens
