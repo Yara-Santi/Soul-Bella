@@ -2,6 +2,7 @@
   
     {
     "nome": "Conheça nossas técnicas",
+    "pagina": "home",
     "profissional": "Dicas e Orientações",
     "tecnicas": [],
     "link": "",
@@ -9,21 +10,11 @@
   },
   {
     "nome": "Unhas & Spa dos Pés",
-    "profissional": "Suelem Souza",
-    "tecnicas": [
-      { "nome": "Manicure Tradicional", "valor": "R$ 30" },
-      { "nome": "Banho de Gel", "valor": "R$ 80" },
-      { "nome": "Blindagem", "valor": "R$ 70" },
-      { "nome": "Spa dos Pés", "valor": "R$ 50" },
-      { "nome": "Cutilagem", "valor": "R$ 20" },
-      { "nome": "Pedicure Tradicional", "valor": "R$ 40" },
-      { "nome": "Pedicure Gel", "valor": "R$ 90" }
-    ],
-    "link": "https://www.instagram.com/suelemsouzanails/",
-    "whatsapp": "5541991878953"
+    "pagina": "home"
   },
   {
     "nome": "Cílios, Sobrancelhas & Estética Facial",
+    "pagina": "estetica",
     "profissional": "Bruna Molodouski",
     "tecnicas": [
       { "nome": "Extensão de Cílios Fio a Fio", "valor": "R$ 150" },
@@ -42,6 +33,7 @@
 
   {
     "nome": "Dicas e Orientações",
+    "pagina": "home",
     "profissional": "Cuidados Essenciais",
     "tecnicas": [],
     "link": "",
@@ -50,6 +42,7 @@
 
   {
     "nome": "Estamos no Instagram",
+    "pagina": "home",
     "profissional": "Siga-nos e fique por dentro das novidades!",
     "tecnicas": [],
     "link": "https://www.instagram.com/espaco_soulbella/",
@@ -58,6 +51,7 @@
 
   {
     "nome": "Nossas Políticas",
+    "pagina": "home",
     "profissional": "Compromisso com o Bem-Estar",
     "tecnicas": [],
     "link": "",

@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const professionalsList = document.getElementById('professionals-list');
 
-    fetch('data.json')
+    fetch('unhas.json')
         .then(response => response.json())
         .then(data => {
             // Filtra apenas os serviços de unhas
-            const unhasData = data.filter(servico => servico.nome.toLowerCase().includes('unhas'));
+            const unhasData = data; // Agora podemos usar todos os dados do arquivo unhas.json
             
             professionalsList.innerHTML = ''; // Limpa a mensagem de "carregando"
 
