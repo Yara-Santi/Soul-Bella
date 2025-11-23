@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espaço Soul ଓella</title>
+    <!-- Link para a biblioteca de ícones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #search-input {
+            color: white; /* Define a cor do texto digitado como branco */
+        }
+        header {
+            margin-bottom: 55px; /* Aumenta o espaço abaixo do cabeçalho */
+        }
+        .footer-links li {
+            display: inline; /* Exibe os itens da lista na mesma linha */
+            margin: 10px;   /* Adiciona um pequeno espaçamento horizontal entre os links */
+        }
+
+    </style>
+</head>
+<body class="home-page">
+    <header class="main-header">
+        <div>
+            <div class="title-container">
+                <!-- O logo volta para dentro do header, ao lado do título -->
+                <a href="index.html" class="logo-link">
+                    <img src="images/logo.png" alt="Logo do Espaço Soulbella" class="header-logo">
+                </a>
+                <h1> <i class="fa-solid fa-butterfly butterfly-icon"></i> Espaço Soul Bella | Beleza & Bem-Estar </h1>
+            </div>
+            <p class="main-subtitle">Cuidado completo com profissionais especializadas</p>
+        </div>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Busque por serviço, profissional ou técnica...">
+            <button id="botao-busca">Buscar</button>
+            <!-- Container para exibir os resultados da busca -->
+            <div id="search-results"></div>
+        </div>
+    </header>
+    <main>
+        <section class="card-container">
+            <!-- Os cards de serviço serão carregados aqui dinamicamente -->
+        </section>
+    </main>
+
+    <footer class="footer">
+        <ul class="footer-links">
+             <li>
+                <a href="https://share.google/Pp4kaKnNYY1mtVvk2" target="_blank"> Seg a Sáb. 08h as 18h - Rua José de Oliveira Franco, 896 - Bairro Alto  | 📍 Ver no mapa</a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

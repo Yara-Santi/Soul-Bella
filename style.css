@@ -1,0 +1,1123 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap'); /* Regra @: Importa uma folha de estilos externa, neste caso, a fonte 'Quicksand' do Google Fonts. */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap'); /* Importa a fonte 'Playfair Display' para títulos elegantes. */
+
+html {
+    height: 100vh; /* Garante que o html tenha a altura da viewport */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita a barra de rolagem horizontal */
+}
+
+* {
+    box-sizing: border-box; /* Propriedade: Garante que o padding e a borda sejam incluídos na largura e altura totais do elemento. */
+}
+
+:root {
+    --primary-color: #EAD5D5; /* Variável CSS: Rosa antigo para acentos e destaques. */
+    --secondary-color: #2b2b2b; /* Variável CSS: Cinza escuro para fundos de UI. */
+    --tertiary-color: #A9A9A9; /* Variável CSS: Cinza médio para textos secundários e bordas. */
+    --bg-color: #1a1a1a; /* Variável CSS: Preto suave para o fundo principal. */
+}
+
+body {
+    height: 100%;
+    min-height: 100vh;
+    margin: 0; /* Remove a margem externa padrão do elemento <body>. */
+    color: #F5F5F5; /* Propriedade: Define a cor padrão do texto como um branco suave para legibilidade. */
+    font-family: "Quicksand", sans-serif; /* Propriedade: Define a família de fontes para o texto, com 'Quicksand' como primeira opção. */
+
+    /* Layout Flexbox para empurrar o rodapé para baixo */
+    display: flex;
+    flex-direction: column;
+    min-height: 100%; /* Garante que o body ocupe pelo menos a altura total do html */
+
+    /* Define o background PADRÃO para TODAS as páginas */
+    background-image: url('images/background-paginas.webp');
+    background-size: cover;
+    background-position: 15px;
+    background-attachment: fixed;
+    background-color: var(--bg-color); /* Cor de fundo de segurança */
+}
+
+/* Estilos específicos para a PÁGINA INICIAL */
+.home-page {
+    min-height: 100vh;
+    padding-top: 200px; /* Adiciona espaço APENAS na home para o cabeçalho fixo, resolvendo a sobreposição */
+    background-image: url('images/background.webp');
+    background-size: cover;
+    background-position: left top; /* Alinha a imagem pela base para manter as modelos visíveis */
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+}
+
+
+/* Estilo base para todos os cabeçalhos */
+header, .details-page-header {
+    /* O padding foi duplicado, vamos limpar e usar um valor consistente */
+    padding: 2rem 1rem; 
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo específico para o cabeçalho FIXO da página inicial */
+.main-header {
+    justify-content: space-between;
+    position: fixed; /* Fixa o cabeçalho no topo da tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001; /* Z-index alto para ficar sobre todo o conteúdo */
+    gap: 2rem;
+    /* O cabeçalho da página inicial volta a ser transparente */
+    background-color: transparent;
+    border-bottom: 1px solid rgba(234, 213, 213, 0.1); /* Linha sutil para delimitar o header */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Sombra mais forte para legibilidade */
+}
+
+/* Container para alinhar o logo e o título */
+.title-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Espaço entre o logo e o título */
+}
+
+/* Estilo para a imagem do logo no cabeçalho */
+.header-logo {
+    /* Revertendo o logo para o fluxo normal do documento */
+    height: 95px;
+    width: auto; /* A largura se ajustará automaticamente para manter a proporção */
+    object-fit: contain; /* Garante que a imagem não seja distorcida */
+    transition: transform 0.3s ease;
+    margin-top: 0; /* Remove a margem para um alinhamento mais limpo */
+}
+
+.header-logo:hover {
+    transform: scale(1.05); /* Efeito de zoom sutil no hover */
+}
+
+/* Estilo para o link que envolve o logo, para remover decorações padrão */
+.logo-link {
+    line-height: 0; /* Remove qualquer altura de linha extra que o link possa adicionar */
+    /* Removemos o posicionamento absoluto */
+}
+
+/* Estilos específicos para o cabeçalho das páginas de detalhes */
+.details-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    /* O padding agora é herdado da regra base 'header, .details-page-header' */
+    width: 100%;
+    /* O cabeçalho das páginas de detalhes volta a ser transparente */
+    background-color: transparent;
+    border-bottom: 1px solid rgba(234, 213, 213, 0.1); /* Linha sutil para delimitar o header */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Sombra mais forte para legibilidade */
+    margin-bottom: 2rem; /* Adiciona o espaçamento solicitado abaixo do cabeçalho */
+}
+
+/* Container central do cabeçalho de detalhes */
+.details-header-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o botão e o subtítulo */
+    gap: 2rem; /* Espaço entre o botão "Voltar" e o subtítulo */
+}
+
+/* Espaçador para balancear o layout */
+.header-spacer {
+    width: 95px; /* Mesma largura do logo para um alinhamento perfeito */
+}
+
+/* Estilo para o subtítulo no cabeçalho de detalhes */
+.details-header-center .header-subtitle {
+    text-align: center; /* Centraliza o texto */
+    color: #fac6e0; /* Cor rosa neon permanente, inspirada no brilho do botão "Voltar" */
+    font-size: 1.2rem; /* Mesmo tamanho da fonte do botão "Voltar" */
+    font-weight: normal; /* Remove o negrito para igualar ao botão "Voltar" */
+    font-style: normal; /* Garante que o texto não fique em itálico */
+    line-height: 1.6; /* Ajusta a altura da linha para o novo tamanho da fonte */
+    /* A fonte Quicksand é a padrão do body, mas reforçamos aqui para garantir */
+    margin: 0.1rem 0 0 0; /* Adiciona uma margem no topo */
+    text-shadow: 0 0 5px #fa93db, 0 0 10px #FF69B4; /* Efeito de brilho (glow) neon rosa */
+    font-family: 'Quicksand', sans-serif; /* Garante a fonte padrão do site */
+}
+
+/* Estilo para o subtítulo da página inicial */
+.main-subtitle {
+    color: #fff5fb; /* Cor alterada para branco suave, para maior destaque */
+    font-size: 1rem; /* Tamanho da fonte do subtítulo */
+    margin-top: -1.7rem; /* Usa uma margem negativa para "puxar" o subtítulo para cima */
+    font-style: normal; /* Coloca o texto em itálico */
+    font-weight: normal; /* Remove o negrito para um visual mais suave */
+    padding-left: 15rem; /* Ajusta o padding para alinhar com o início do texto do título */
+   
+}
+
+header h1 {
+    font-size: 1.8rem; /* Propriedade: Define o tamanho da fonte do título. */
+    margin: 0; /* Propriedade: Remove a margem externa padrão do <h1>. */
+    font-weight: 400; /* Propriedade: Define a espessura da fonte como média. */
+    white-space: nowrap; /* Propriedade: Impede que o texto do título seja quebrado em várias linhas. */
+    color: #fff5fb; /* Propriedade: Define a cor do texto do título como branco suave. */
+}
+
+.butterfly-icon {
+    font-size: 1.6rem; /* Propriedade: Ajusta o tamanho do ícone. */
+    color: var(--primary-color); /* Propriedade: Define a cor do ícone como rosa antigo. */
+    vertical-align: middle; /* Propriedade: Alinha o ícone verticalmente com o texto. */
+    margin-right: 0.5rem; /* Adiciona um pequeno espaço à direita do ícone */
+}
+
+.title-icon {
+    font-size: 1.5em; /* Aumenta um pouco o tamanho do ícone no título */
+    vertical-align: middle; /* Ajuda a alinhar o ícone com o texto */
+}
+
+/* Novo container para a barra e botão de busca */
+.search-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    position: relative; /* Necessário para posicionar os resultados da busca */
+}
+
+/* Container para os resultados da busca */
+#search-results {
+    display: none; /* Começa escondido */
+    position: absolute;
+    top: 100%; /* Posiciona logo abaixo da barra de busca */
+    left: 0;
+    right: 0;
+    background: rgba(43, 43, 43, 0.95); /* Fundo escuro com alta opacidade */
+    border: 1px solid rgba(234, 213, 213, 0.2);
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    z-index: 1002; /* Garante que fique acima de outros elementos */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px); /* Efeito de vidro para o fundo */
+}
+
+/* Estilo para cada item de resultado */
+.search-result-item {
+    display: block;
+    padding: 0.8rem 1rem;
+    color: #F5F5F5;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.search-result-item:hover {
+    background-color: rgba(234, 213, 213, 0.1); /* Destaque sutil ao passar o mouse */
+    color: #fff;
+}
+
+div input {
+    padding: 0.375rem 0.75rem; /* Propriedade: Define o espaçamento interno do campo de texto. */
+    border-radius: 1rem; /* Propriedade: Arredonda os cantos do campo de texto. */
+    border: 1px solid var(--primary-color); /* Propriedade: Define a borda com a cor de destaque rosa antigo. */
+    background: var(--secondary-color); /* Propriedade: Define a cor de fundo do campo de texto (invertido para cinza claro). */
+    font-family: inherit; /* Propriedade: Faz o campo de texto herdar a fonte de seu elemento pai. */
+    font-size: 1.2rem; /* Tamanho da fonte reduzido */
+    transition: all 0.2s ease; /* Propriedade: Adiciona uma animação suave de 0.2s para todas as propriedades que mudam. */
+    width: 20rem; /* Largura reduzida para caber ao lado do botão */
+    color: var(--bg-color); /* Propriedade: Define a cor do texto que o usuário digita (invertido para rosa). */
+    margin-right: .5rem; /* Propriedade: Adiciona uma margem à direita do campo de texto. */
+}
+
+div input::placeholder {
+    font-size: 0.9rem; /* Propriedade: Define o tamanho da fonte para o texto do placeholder. */
+    font-weight: 300; /* Propriedade: Define a espessura da fonte do placeholder como leve. */
+    color: var(--tertiary-color); /* Propriedade: Define a cor do texto do placeholder. */
+}
+
+div input:focus {
+    outline: none; /* Propriedade: Remove a borda de foco padrão que os navegadores aplicam. */
+    border-color: var(--bg-color); /* Propriedade: Muda a cor da borda quando o campo de texto está em foco. */
+    box-shadow: 0 0 0 0.1rem var(--tertiary-color); /* Propriedade: Adiciona uma sombra externa para dar um efeito de "brilho" ao focar. */
+}
+
+#botao-busca {
+    padding: 0.5rem 1.5rem; /* Padding reduzido para diminuir o botão */
+    border-radius: 1rem; /* Propriedade: Arredonda os cantos do botão. */
+    border: none; /* Propriedade: Remove a borda padrão do botão. */
+    cursor: pointer; /* Propriedade: Muda o cursor do mouse para uma "mãozinha" para indicar que é clicável. */
+    font-family: inherit; /* Propriedade: Faz o botão herdar a fonte de seu elemento pai. */
+    font-weight: 500; /* Propriedade: Define a espessura da fonte do texto do botão. */
+    font-size: 0.9rem; /* Tamanho da fonte reduzido */
+    white-space: nowrap; /* Propriedade: Impede que o texto do botão seja quebrado em várias linhas. */
+    transition: background-color 0.2s ease, color 0.2s ease; /* Propriedade: Anima suavemente a mudança da cor de fundo e da cor do texto. */
+    background-color: transparent; /* Propriedade: Define a cor de fundo do botão como transparente. */
+    color: var(--primary-color); /* Propriedade: Define a cor do texto do botão como rosa antigo. */
+    border: 1px solid var(--primary-color); /* Propriedade: Adiciona uma borda rosa antigo ao redor do botão. */
+}
+
+#botao-busca:hover {
+    background-color: var(--primary-color); /* Propriedade: Muda a cor de fundo para rosa antigo no hover. */
+    color: var(--bg-color); /* Propriedade: Muda a cor do texto para preto no hover. */
+    box-shadow: 0 0 0 0.1rem var(--tertiary-color); /* Propriedade: Adiciona uma sombra cinza média ao passar o mouse. */
+}
+
+#botao-busca:active {
+    transform: scale(0.98); /* Propriedade: Diminui ligeiramente o tamanho do botão quando ele está sendo clicado. */
+}
+
+main {
+    width: 100%; /* Garante que o main ocupe toda a largura disponível */
+    /* Ajustes para empurrar a seção de pagamento para baixo */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Adiciona centralização para os cards da página inicial */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+article {
+    background: none; /* Propriedade: Define o fundo como transparente. */
+    border-radius: 0; /* Propriedade: Remove o arredondamento dos cantos. */
+    padding: 0; /* Propriedade: Zera o espaçamento interno (sobrescrito pela próxima linha). */
+    padding: 0 1rem; /* Propriedade: Define o espaçamento interno como 0 no topo/base e 1rem nas laterais. */
+    margin-bottom: 1.25rem; /* Propriedade: Adiciona uma margem na parte inferior do artigo. */
+    box-shadow: none; /* Propriedade: Remove qualquer sombra do elemento. */
+    transition: background-color 0.3s ease, border-bottom-color 0.3s ease; /* Propriedade: Anima suavemente a mudança da cor de fundo e da cor da borda inferior. */
+    border-bottom: 1px solid var(--bg-color); /* Propriedade: Adiciona uma linha sólida na parte inferior do artigo. */
+    padding-bottom: 1.5rem; /* Propriedade: Adiciona um espaçamento interno na parte inferior do artigo. */
+}
+
+article:hover {
+    /* Removemos o transform para que o fundo não se mova */
+    cursor: pointer; /* Propriedade: Muda o cursor do mouse para uma "mãozinha" para indicar que é interativo. */
+    /* O fundo do card não muda mais no hover */
+}
+
+article h2 {
+    margin-top: 0; /* Propriedade: Remove a margem do topo do título do artigo. */
+    font-weight: 600; /* Propriedade: Define a espessura da fonte como semi-negrito. */
+    font-size: 1.6rem; /* Propriedade: Define o tamanho da fonte do título. */
+    border-bottom: none; /* Propriedade: Remove a borda inferior do título. */
+    padding-bottom: 0; /* Propriedade: Remove o espaçamento interno inferior do título. */
+    margin-bottom: 0.25rem; /* Propriedade: Adiciona uma pequena margem abaixo do título. */
+    color: var(--primary-color); /* Propriedade: Define a cor do texto do título usando a variável primária. */
+}
+
+.card h2 {
+    color: #F5F5F5; /* Propriedade: Define a cor do texto do título do card como branco suave. */
+    text-align: center; /* Propriedade: Centraliza o texto do título do card. */
+}
+
+.card p {
+    text-align: center; /* Propriedade: Centraliza o texto do parágrafo do card. */
+    color: #ffffff; /* Propriedade: Define a cor do texto do parágrafo do card como branco suave. */
+}
+
+/* Estilo para o link dentro do card da página inicial */
+.card a {
+    color: #F5F5F5; /* Cor alterada para branco suave */
+    font-size: 1.2rem; /* Aumenta o tamanho da fonte para destaque */
+    padding: 0.1rem 0;
+    display: inline-block;
+    /* Prepara a animação suave para o efeito de brilho */
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.2s ease;
+}
+
+/* Efeito de brilho (glow) igual ao do botão "Voltar" */
+.card a:hover {
+    color: #fff; /* Deixa o texto branco para um brilho mais intenso */
+    text-shadow: 0 0 5px #fa93db, 0 0 10px #FF69B4, 0 0 20px #f781ed;
+    transform: scale(1.05); /* Adiciona o sutil movimento de crescimento */
+}
+
+article p {
+    margin: 0.5rem 0; /* Propriedade: Define a margem (0.5rem no topo/base, 0 nas laterais). */
+    line-height: 1rem; /* Propriedade: Define a altura da linha, melhorando a legibilidade do parágrafo. */
+    font-size: 1rem; /* Propriedade: Define o tamanho da fonte do parágrafo. */
+    margin-bottom: 0.5rem; /* Propriedade: Adiciona uma margem na parte inferior do parágrafo. */
+    color: var(--secondary-color); /* Propriedade: Define a cor do texto do parágrafo. */
+}
+
+article p strong {
+    color: var(--tertiary-color); /* Propriedade: Define a cor para o texto em negrito (<strong>) dentro de um parágrafo. */
+    font-weight: 400; /* Propriedade: Define a espessura da fonte como normal. */
+}
+
+article a {
+    color: var(--primary-color); /* Propriedade: Define a cor dos links dentro de um artigo. */
+    text-decoration: none; /* Propriedade: Remove a linha de sublinhado padrão dos links. */
+    font-weight: 200; /* Propriedade: Define a espessura da fonte como extra-leve. */
+}
+
+article a:hover {
+    /* O sublinhado foi removido para não interferir com os efeitos de brilho */
+}
+
+/* Estilos para a página de detalhes (agora um container flex) */
+.details-container {
+    width: 100%; /* Faz o container usar toda a largura do main */
+    margin: 0 auto;
+    padding: 0.5rem;
+    color: #F5F5F5;
+    display: flex; /* Habilita o layout flexbox */
+    justify-content: center; /* Centraliza os cards horizontalmente */
+    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha em telas menores */
+    gap: 1rem; /* Espaçamento entre os cards */
+}
+
+/* --- Layout da Página de Técnicas --- */
+.tecnicas-layout {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1400px; /* Aumenta a largura máxima para acomodar as duas colunas */
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.tecnicas-content {
+    flex: 2; /* Faz a coluna de texto ocupar 2/3 do espaço */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.tecnicas-sidebar {
+    flex: 1; /* Faz a coluna do carrossel ocupar 1/3 do espaço */
+    position: sticky; /* Faz o carrossel "grudar" na tela durante a rolagem */
+    top: 180px; /* Distância do topo (abaixo do header) */
+    align-self: flex-start; /* Alinha o início da sidebar com o início do conteúdo */
+}
+
+/* --- Estilos do Carrossel --- */
+.carousel-section {
+    width: 100%;
+    padding: 0 1rem; /* Espaçamento lateral */
+    margin-bottom: 2rem; /* Espaço abaixo do carrossel */
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%; /* Ocupa toda a largura da sidebar */
+    height: 500px; /* Altura fixa do carrossel */
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden; /* Esconde as partes das imagens que saem do container */
+    border: 1px solid rgba(234, 213, 213, 0.1);
+    /* Adiciona um brilho (glow) neon rosa ao redor do carrossel */
+    box-shadow: 0 0 8px #fa93db, 0 0 15px #FF69B4, 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Wrapper para os slides, crucial para o posicionamento */
+.carousel-slides-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Adiciona um espaço entre os carrosséis quando há mais de um */
+.carousel-container + .carousel-container {
+    margin-top: 2rem;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Começa invisível */
+    transform: translateY(-20px); /* Começa um pouco acima */
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Transição sutil e elegante */
+    z-index: 1;
+}
+
+.carousel-slide.active {
+    opacity: 1; /* Fica visível */
+    transform: translateY(0); /* Desliza para a posição final */
+    z-index: 2; /* Garante que o slide ativo fique na frente */
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem cubra todo o espaço sem distorcer */
+}
+
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3; /* Fica na frente de todos os slides */
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 1;
+}
+
+.carousel-prev { left: 1rem; }
+.carousel-next { right: 1rem; }
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Estilo para os blocos de conteúdo das páginas de políticas e técnicas */
+.content-block {
+    /* Fundo com 50% de transparência para efeito de vidro */
+    background: linear-gradient(145deg, rgba(58, 58, 58, 0.5), rgba(43, 43, 43, 0.5));
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: left;
+    /* A largura agora é controlada pelo container flex pai */
+    width: 100%;
+    border: 1px solid rgba(234, 213, 213, 0.1);
+    /* Adiciona o brilho neon rosa e mantém a sombra para profundidade */
+    box-shadow: 0 0 8px #fa93db, 0 0 15px #FF69B4, 0 8px 16px rgba(0, 0, 0, 0.3);
+    /* O contorno neon foi removido, mantendo apenas a sombra para profundidade */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo específico para os blocos da página de políticas */
+.politicas-page .content-block {
+    background: #000; /* Fundo preto sólido, sem transparência */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Sombra um pouco mais forte para compensar a falta de brilho */
+}
+
+/* Estilo específico para os blocos de dicas, para layout lado a lado */
+.dica-block {
+    flex: 1 1 400px; /* Permite que o card cresça e encolha, com uma base de 400px */
+    max-width: 550px; /* Largura máxima para cada card de dica */
+}
+
+/* Estilo para o nome de cada técnica (Ex: Manicure Tradicional) */
+.content-block h3 {
+    font-family: 'Quicksand', sans-serif; /* Mesma fonte da descrição */
+    font-size: 1.2rem; /* Um pouco maior que o parágrafo */
+    font-weight: 500; /* Mais leve que o título principal */
+    color: #fff; /* Cor branca para o brilho se destacar */
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    /* Efeito de brilho (glow) neon rosa */
+    text-shadow: 0 0 5px #fa93db, 0 0 10px #FF69B4;
+}
+
+/* Remove o brilho dos subtítulos APENAS na página de políticas */
+.politicas-page .content-block h3 {
+    text-shadow: none; /* Remove o efeito de brilho */
+    color: var(--primary-color); /* Define a cor do texto para o rosa do tema */
+}
+
+/* Título principal (Ex: UNHAS, Bem-vinda, Dicas) */
+.content-block .content-title, .intro-block .content-title, .dicas-title-container .content-title {
+    font-family: 'Playfair Display', serif;
+    color: #fff; /* Alterado para branco para o brilho se destacar */
+    font-size: 2rem;
+    text-shadow: 0 0 5px #fa93db, 0 0 10px #FF69B4;
+}
+
+.dicas-title-container .content-title {
+    text-decoration: underline; /* Adiciona o sublinhado */
+}
+
+/* Estilo para o bloco de introdução na página de dicas */
+.intro-block {
+    background: linear-gradient(145deg, rgba(58, 58, 58, 0.5), rgba(43, 43, 43, 0.5));
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center; /* Centraliza todo o texto do bloco */
+    width: 100%;
+    max-width: 900px; /* Deixa o bloco mais horizontal */
+    margin-bottom: 2rem; /* Espaço abaixo do bloco de introdução */
+    border: 1px solid rgba(234, 213, 213, 0.1);
+    /* A sombra base é mantida, e a animação é adicionada */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    /* A animação de pulsação foi removida */
+}
+
+/* Estilo para todo o texto (parágrafos) dentro do bloco de introdução */
+.intro-block p {
+    font-family: 'Quicksand', sans-serif; /* Garante a fonte padrão */
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #fff;
+    text-shadow: 0 0 5px #fa93db, 0 0 8px #FF69B4; /* Aplica o brilho neon rosa */
+}
+
+/* Animação de pulsação para o brilho neon */
+@keyframes neon-pulse {
+    0% {
+        box-shadow: 0 0 8px #fa93db, 0 0 15px #FF69B4, 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 12px #ffc1e8, 0 0 25px #ff85c8, 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 8px #fa93db, 0 0 15px #FF69B4, 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Animação de pulsação para a imagem com filtro */
+@keyframes neon-image-pulse {
+    0% {
+        filter: drop-shadow(0 0 5px #fa93db) drop-shadow(0 0 10px #FF69B4);
+    }
+    50% {
+        filter: drop-shadow(0 0 8px #ffc1e8) drop-shadow(0 0 18px #ff85c8);
+    }
+    100% {
+        filter: drop-shadow(0 0 5px #fa93db) drop-shadow(0 0 10px #FF69B4);
+    }
+}
+
+/* Container para o título principal da seção de dicas */
+.dicas-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+    margin-bottom: 1rem; /* Reduz o espaço antes de começar os cards de dicas */
+}
+
+/* Imagem ao lado do título "DICAS" */
+.dica-title-image {
+    height: 120px; /* Define a altura */
+    width: 120px;  /* Define a largura para igualar a altura */
+    object-fit: contain; /* Garante que a imagem caiba no espaço sem distorcer */
+    /* Efeito de contorno (glow) neon rosa */
+    filter: drop-shadow(0 0 5px #fa93db) drop-shadow(0 0 10px #FF69B4);
+    transition: transform 0.3s ease;
+    animation: neon-image-pulse 1.5s infinite; /* Aplica a nova animação de pulsação */
+}
+
+.details-container h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+}
+
+/* Estilos para cada bloco de profissional */
+.professional-block {
+    /* Aplica o fundo com 50% de transparência para efeito de vidro */
+    background: linear-gradient(145deg, rgba(58, 58, 58, 0.5), rgba(43, 43, 43, 0.5));
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1 1 400px; /* Permite que o card cresça e encolha, com uma base de 400px */
+    max-width: 500px; /* Largura máxima para cada card */
+    border: 1px solid rgba(234, 213, 213, 0.1); /* Adiciona uma borda muito sutil */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra para "elevar" o card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave para o hover */
+}
+
+.professional-block:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Sombra mais pronunciada no hover */
+}
+
+/* Estilos para os elementos DENTRO de cada bloco de profissional */
+.professional-block h3 {
+    border-top: 1px solid var(--tertiary-color);
+    margin-top: 1.5rem;
+    font-family: 'Playfair Display', serif; /* Altera a fonte para ser mais elegante */
+    padding-top: 1rem; /* Adiciona espaço acima do texto, abaixo da linha */
+}
+
+.professional-block ul {
+    list-style: none;
+    padding: 0;
+}
+
+.professional-block li {
+    display: flex; /* Cria o layout de colunas */
+    justify-content: space-between; /* Alinha nome à esquerda e preço à direita */
+    align-items: center;
+    padding: 0.8rem 0.5rem; /* Adiciona espaçamento vertical e horizontal */
+    border-bottom: 1px solid rgba(169, 169, 169, 0.2); /* Linha separadora sutil */
+}
+
+.professional-block li:last-child {
+    border-bottom: none; /* Remove a linha do último item */
+}
+.technique-price {
+    color: var(--tertiary-color); /* Cor cinza sutil para o preço */
+    font-weight: 500; /* Deixa o preço um pouco mais destacado que o texto normal */
+}
+
+/* Classe para destacar o item pesquisado */
+.highlight {
+    background-color: rgba(234, 213, 213, 0.15); /* Um fundo rosa bem sutil */
+    transform: scale(1.03); /* Aumenta ligeiramente o tamanho */
+    border-radius: 4px; /* Cantos arredondados */
+}
+
+/* Estilizando o título do serviço com a fonte Playfair Display */
+.professional-block h2 {
+    font-family: 'Playfair Display', serif; /* Reaplica a fonte elegante */
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Adicionando um ícone decorativo ao lado de "Técnicas Oferecidas" */
+.professional-block h3::before {
+    content: url('images/icon-1.gif'); /* Carrega a imagem GIF animada */
+    margin-right: 0.5rem; /* Adiciona um espaço entre o ícone e o texto */
+    /* Ajusta o tamanho e o alinhamento vertical da imagem */
+    display: inline-block;
+    width: 20px; /* Define a largura do ícone (menor) */
+    height: 20px; /* Define a altura do ícone (menor) */
+    vertical-align: middle; /* Alinha o GIF com o meio do texto */
+}
+
+/* Container para os botões de ação ("Ver no Instagram", "Quero Agendar") */
+.actions-container {
+    display: flex; /* Habilita o layout flexbox para alinhar os itens */
+    justify-content: center; /* Centraliza os botões no container */
+    gap: 1rem; /* Cria um espaço entre os botões */
+    flex-wrap: wrap; /* Permite que os botões quebrem para a linha de baixo em telas muito pequenas */
+    margin-top: 1.5rem; /* Adiciona um espaço acima dos botões */
+}
+
+.back-link {
+    text-decoration: none;
+    color: var(--tertiary-color);
+    font-size: 1.2rem;
+    /* Prepara a animação suave para o efeito de brilho */
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: transparent; /* Remove o fundo sólido para um estilo mais leve */
+    color: var(--primary-color); /* Cor do texto rosa, combinando com a borda */
+    padding: 0.8rem 1.5rem; /* Diminui o padding para deixar o botão menor */
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500; /* Deixa a fonte um pouco menos espessa (bold -> medium) */
+    text-align: center; /* Garante que o texto dentro do botão esteja sempre centralizado */
+    cursor: pointer; /* Garante que o cursor seja uma "mãozinha" em todos os botões */
+    font-size: 0.9rem; /* Diminui o tamanho da fonte */
+    border: 1px solid var(--primary-color); /* Adiciona uma borda fina na cor rosa do tema */
+    /* Garante a mesma fonte e prepara a animação de brilho */
+    font-family: 'Quicksand', sans-serif;
+    transition: transform 0.2s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Remove o efeito de hover genérico para dar lugar aos glows específicos */
+.cta-button:hover, .back-link:hover {
+    transform: scale(1.05);
+}
+
+/* Efeito de brilho ROSA NEON para o botão "Voltar" */
+.back-link:hover {
+    color: #fff;
+    text-shadow: 0 0 5px #fa93db, 0 0 10px #FF69B4, 0 0 20px #f781ed;
+}
+
+/* Efeito de brilho ROSA NEON para o botão "Ver no Instagram" */
+.instagram-btn:hover {
+    background-color: #ffa1d0; /* Cor de fundo rosa neon */    
+    color: #1a1a1a; /* Texto escuro para contraste com o rosa neon */
+    box-shadow: 0 0 8px #fd9acc, 0 0 20px #fc9ccc, 0 0 30px #ffacd6; /* Brilho rosa neon */
+}
+
+/* Efeito de brilho VERDE NEON para o botão "Quero Agendar" */
+.agendar-btn:hover {
+    background-color: #c1ffb6; /* Cor de fundo verde neon */
+    color: #1a1a1a; /* Texto escuro para contraste com o verde neon */
+    box-shadow: 0 0 8px #afffa1, 0 0 20px #b2ffa4, 0 0 30px #baffae; /* Brilho verde neon */    
+}
+
+/* Estilos para a página de agendamento */
+.agendamento-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+#agendamento-form {
+    /* Aplica o fundo com 50% de transparência para efeito de vidro */
+    background: linear-gradient(145deg, rgba(58, 58, 58, 0.5), rgba(43, 43, 43, 0.5));
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(234, 213, 213, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left; /* Garante que o texto e os labels comecem à esquerda */
+}
+
+/* Estiliza o título do formulário de agendamento */
+#professional-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+#agendamento-form label {
+    font-size: 1rem;
+    color: var(--tertiary-color);
+    margin-top: 0.5rem;
+}
+
+#agendamento-form input,
+#agendamento-form select {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #444;
+    background-color: #3a3a3a;
+    color: #F5F5F5;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+}
+
+/* Adiciona espaço acima da lista de técnicas */
+#tecnicas-list {
+    margin-top: 0.5rem;
+}
+
+/* Estilos para as opções de técnica com radio buttons */
+.tecnica-option {
+    display: flex;
+    align-items: center;
+    background-color: #3a3a3a;
+    margin-bottom: 0.5rem; /* Adiciona um pequeno espaço entre as opções */
+    padding: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.tecnica-option:hover {
+    background-color: #444;
+}
+
+.tecnica-option input[type="checkbox"] {
+    margin-right: 0.5rem; /* Diminui o espaço entre a bolinha e o texto */
+    transform: scale(1.2); /* Aumenta um pouco o tamanho da caixinha */
+}
+
+.tecnica-option label {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Estilo para a opção de técnica QUANDO ela está selecionada */
+.tecnica-option input[type="checkbox"]:checked + label {
+    color: var(--primary-color); /* Muda a cor do texto para o rosa do tema */
+}
+.tecnica-option input[type="checkbox"]:checked + label .tecnica-price {
+    color: #F5F5F5; /* Deixa o preço branco para maior destaque */
+}
+
+/* Estilos para a página de agendamento */
+.agendamento-container {
+    max-width: 700px;
+    margin: 0 auto; /* Centraliza o container */
+    background-color: transparent; 
+}
+
+#agendamento-form label {
+    font-size: 1rem;
+    color: var(--tertiary-color);
+    margin-top: 0.5rem;
+}
+
+#agendamento-form input,
+#agendamento-form select {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #444;
+    background-color: #3a3a3a;
+    color: #F5F5F5;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+}
+
+#agendamento-form button {
+    margin-top: 1rem;
+}
+
+/* Estilos para as opções de técnica com radio buttons */
+.tecnica-option {
+    display: flex;
+    align-items: center;
+    background-color: #3a3a3a;
+    margin-bottom: 0.5rem; /* Adiciona um pequeno espaço entre as opções */
+    padding: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.tecnica-option:hover {
+    background-color: #444;
+}
+
+.tecnica-option input[type="radio"] {
+    margin-right: 1rem; /* Diminui o espaço entre a bolinha e o texto */
+}
+
+.tecnica-option label {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+}
+
+.footer {
+    position: fixed; /* Fixa o rodapé na parte inferior da tela */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Propriedade: Faz o rodapé ocupar 100% da largura do seu container. */
+    color: var(--tertiary-color); /* Propriedade: Define a cor do texto padrão dentro do rodapé. */
+    background-color: transparent;
+    padding: 10px 20px; /* Espaçamento interno para não colar nas bordas da tela */
+    border-top: none; /* Garante que não haja linha no topo */
+    font-size: 0.7rem; /* Tamanho da fonte do rodapé */
+    z-index: 1001; /* Z-index alto para ficar sobre todo o conteúdo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    align-items: center;
+    gap: 0.5rem; /* Espaço entre os elementos do rodapé */
+}
+
+.footer-location {
+    color: #9aa0a6; /* Propriedade: Define a cor do texto para elementos com esta classe. */
+    margin-bottom: 0,2px; /* Propriedade: Adiciona uma margem na parte inferior. */
+}
+
+.footer-links {
+    list-style: none; /* Propriedade: Remove os marcadores (bolinhas) da lista. */
+    padding: 0; /* Remove o padding padrão da lista */
+    margin: 0; /* Remove a margem padrão da lista */
+    display: flex; /* Propriedade: Torna a lista um container flexbox. */
+    flex-wrap: wrap; /* Propriedade Flexbox: Permite que os itens da lista quebrem para a próxima linha se não houver espaço. */
+    justify-content: center; /* Propriedade Flexbox: Centraliza os itens da lista horizontalmente. */
+    gap: 0.6rem; /* Espaçamento final entre os links do rodapé */
+}
+
+.footer-links a {
+    color: #ffeefe; /* Propriedade: Define a cor dos links como um rosa vibrante para contraste. */
+    text-decoration: none; /* Propriedade: Remove o sublinhado dos links. */
+    /* Prepara a animação suave para o efeito de brilho e o movimento */
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.2s ease;
+    padding: 0; /* Zera o padding para que o 'gap' seja o único a controlar o espaço */
+    margin: 0; /* Zera a margem para que o 'gap' seja o único a controlar o espaço */
+}
+
+/* Estilos para a seção de formas de pagamento */
+.payment-methods {
+    text-align: center;
+    margin-top: 0.5rem; /* Espaço acima da seção de pagamento */
+}
+
+.payment-methods h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    color: var(--tertiary-color);
+    font-weight: 400;
+}
+
+.payment-icons {
+    font-size: 2rem; /* Tamanho dos ícones */
+    color: #fff;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.payment-icons i {
+    transition: transform 0.3s ease, color 0.3s ease; /* Animação suave para o hover */
+}
+
+.payment-icons i:hover {
+    transform: translateY(-5px); /* Efeito de flutuar */
+    color: var(--primary-color); /* Muda a cor para o rosa do tema */
+}
+
+.footer-links a:hover {
+    color: #F5F5F5; /* Propriedade: Muda a cor do link para branco suave ao passar o mouse. */
+    text-shadow: 0 0 5px #f397ee, 0 0 10px #f397ee, 0 0 20px #f397ee; /* Adiciona o brilho neon rosa */
+    transform: scale(1.05); /* Adiciona o sutil movimento de crescimento */
+}
+
+/* Estilos para a nova seção de pagamento no final do conteúdo */
+.payment-section {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem; /* Espaço acima da seção */
+    margin-top: auto; /* Empurra a seção para o final do container 'main' */
+    padding-top: 3rem; /* Aumenta o espaço superior para separar do conteúdo */
+    border-top: 1px solid rgba(234, 213, 213, 0.2); /* Linha sutil para separar */
+}
+
+.payment-section h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-size: 1.5rem; /* Fonte um pouco menor */
+    margin-bottom: 1.5rem;
+}
+
+.payment-icons-section {
+    font-size: 2.5rem; /* Ícones um pouco maiores */
+    font-size: 2.2rem; /* Ícones um pouco menores */
+    color: #fff;
+    display: flex;
+    gap: 1.5rem; /* Espaço maior entre os ícones */
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Animação reativada para os ícones de pagamento na seção */
+.payment-icons-section i {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.payment-icons-section i:hover {
+    transform: translateY(-5px); /* Efeito de flutuar */
+    color: var(--primary-color); /* Muda a cor para o rosa do tema */
+}
+
+/* Media query para tablets e dispositivos menores */
+@media (max-width: 992px) {
+    .main-header {
+        position: relative; /* Remove a fixação do header */
+        flex-direction: column; /* Propriedade Flexbox: Empilha os itens do cabeçalho verticalmente. */
+        justify-content: center; /* Centraliza os itens */
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .home-page {
+        padding-top: 1rem; /* Reduz o padding do topo, já que o header não é mais fixo */
+        background-position: center; /* Centraliza melhor a imagem de fundo */
+    }
+
+    .title-container {
+        flex-direction: column; /* Empilha logo e título */
+        text-align: center;
+    }
+
+    header h1 {
+        white-space: normal; /* Permite que o título quebre a linha */
+    }
+
+    .main-subtitle {
+        padding-left: 0; /* Remove o padding para centralizar */
+        text-align: center;
+        margin-top: -1rem; /* Ajusta a posição */
+    }
+
+    .search-container {
+        justify-content: center; /* Centraliza a barra de busca */
+    }
+
+    /* Ajustes gerais para páginas de detalhes */
+    .details-page-header {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .details-header-center {
+        order: 2; /* Coloca o título abaixo do logo */
+        gap: 1rem;
+    }
+
+    .header-logo {
+        order: 1; /* Coloca o logo no topo */
+    }
+
+}
+
+@media (max-width: 768px) {
+    /* A regra 'header' foi movida para a media query de 992px para uma melhor transição */
+    div input { /* Seletor: Estiliza o <input> em telas menores. */
+        width: 90vw; /* Propriedade: Define a largura como 90% da largura da janela de visualização (viewport). */
+        font-size: 1.2rem; /* Propriedade: Reduz o tamanho da fonte do campo de texto. */
+    }
+
+    main { /* Seletor: Estiliza o <main> em telas menores. */
+        padding: 0 1rem; /* Propriedade: Adiciona espaçamento interno nas laterais. */
+    }
+
+    article:hover { /* Seletor: Estiliza o <article> no estado :hover em telas menores. */
+        transform: none; /* Propriedade: Remove o efeito de zoom ao passar o mouse, comum em dispositivos de toque. */
+    }
+
+    /* Ajusta o título e a imagem das seções de Dicas/Curiosidades */
+    .dicas-title-container {
+        flex-direction: column; /* Empilha o título e a imagem */
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .dica-title-image {
+        height: 100px; /* Reduz o tamanho da imagem */
+        width: 100px;
+    }
+
+    /* Reduz o padding dos blocos de conteúdo */
+    .content-block, .intro-block, #agendamento-form {
+        padding: 1.5rem;
+    }
+
+    /* Reduz o tamanho das fontes dos títulos */
+    .content-block .content-title, .intro-block .content-title, .dicas-title-container .content-title {
+        font-size: 1.5rem;
+    }
+    .content-block h3 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 { /* Media Query: Aplica estes estilos quando a largura da tela for 480px ou menos. */
+        font-size: 1rem; /* Propriedade: Reduz ainda mais o tamanho da fonte do título. */
+        max-width: 70%; /* Propriedade: Limita a largura máxima do título. */
+        word-wrap: break-word; /* Propriedade: Permite que palavras longas quebrem para a próxima linha. */
+    }
+
+    div input, /* Seletor: Agrupa o input e seu placeholder para aplicar os mesmos estilos. */
+    div input::placeholder {
+        font-size: 1rem; /* Propriedade: Reduz o tamanho da fonte para ambos. */
+    }
+
+    article h2 { /* Seletor: Estiliza o <h2> do artigo em telas muito pequenas. */
+        font-size: 1.3rem; /* Propriedade: Reduz o tamanho da fonte do título do artigo. */
+    }
+
+    .footer { /* Seletor: Estiliza o rodapé em telas muito pequenas. */
+        display: none; /* Propriedade: Oculta completamente o rodapé. */
+    }
+
+    /* Esconde a seção de pagamento no final das páginas para economizar espaço */
+    .payment-section {
+        display: none;
+    }
+
+    button { /* Seletor: Estiliza o <button> em telas muito pequenas. */
+        margin-top: 1rem; /* Propriedade: Adiciona uma margem no topo do botão. */
+    }
+}

@@ -1,0 +1,82 @@
+[
+  
+    {
+    "nome": "Conheça nossas técnicas",
+    "profissional": "Dicas e Orientações",
+    "tecnicas": [],
+    "link": "",
+    "whatsapp": ""
+  },
+  {
+    "nome": "Unhas e Alongamento",
+    "profissional": "Thaís Souza",
+    "tecnicas": [
+      { "nome": "Manicure Tradicional", "valor": "R$ 30" },
+      { "nome": "Banho de Gel", "valor": "R$ 80" },
+      { "nome": "Blindagem", "valor": "R$ 70" },
+      { "nome": "Alongamento no Molde F1", "valor": "R$ 120" },
+      { "nome": "Cutilagem", "valor": "R$ 20" },
+      { "nome": "Pedicure Tradicional", "valor": "R$ 40" },
+      { "nome": "Pedicure Gel", "valor": "R$ 90" }
+    ],
+    "link": "https://www.instagram.com/thaissouza.naildesigner/",
+    "whatsapp": "5541987126352"
+  },
+  {
+    "nome": "Unhas & Spa dos Pés",
+    "profissional": "Suelem Souza",
+    "tecnicas": [
+      { "nome": "Manicure Tradicional", "valor": "R$ 30" },
+      { "nome": "Banho de Gel", "valor": "R$ 80" },
+      { "nome": "Blindagem", "valor": "R$ 70" },
+      { "nome": "Spa dos Pés", "valor": "R$ 50" },
+      { "nome": "Cutilagem", "valor": "R$ 20" },
+      { "nome": "Pedicure Tradicional", "valor": "R$ 40" },
+      { "nome": "Pedicure Gel", "valor": "R$ 90" }
+    ],
+    "link": "https://www.instagram.com/suelemsouzanails/",
+    "whatsapp": "5541991878953"
+  },
+  {
+    "nome": "Cílios, Sobrancelhas & Estética Facial",
+    "profissional": "Bruna Molodouski",
+    "tecnicas": [
+      { "nome": "Extensão de Cílios Fio a Fio", "valor": "R$ 150" },
+      { "nome": "Volume Brasileiro", "valor": "R$ 180" },
+      { "nome": "Lash Lifting", "valor": "R$ 120" },
+      { "nome": "Design de Sobrancelhas", "valor": "R$ 40" },
+      { "nome": "Micropigmentação", "valor": "R$ 450" },
+      { "nome": "Hydra Gloss", "valor": "R$ 90" },
+      { "nome": "Limpeza de Pele", "valor": "R$ 130" },
+      { "nome": "Spa Labial", "valor": "R$ 60" },
+      { "nome": "Dermaplaning", "valor": "R$ 110" }
+    ],
+    "link": "https://www.instagram.com/bruh_cilioseestetica/",
+    "whatsapp": "5541999599561"
+  },
+
+  {
+    "nome": "Dicas e Orientações",
+    "profissional": "Cuidados Essenciais",
+    "tecnicas": [],
+    "link": "",
+    "whatsapp": ""
+  },
+
+  {
+    "nome": "Estamos no Instagram",
+    "profissional": "Siga-nos e fique por dentro das novidades!",
+    "tecnicas": [],
+    "link": "https://www.instagram.com/espaco_soulbella/",
+    "whatsapp": ""
+  },
+
+  {
+    "nome": "Nossas Políticas",
+    "profissional": "Compromisso com o Bem-Estar",
+    "tecnicas": [],
+    "link": "",
+    "whatsapp": ""
+  }
+  
+]
