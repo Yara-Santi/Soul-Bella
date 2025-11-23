@@ -8,21 +8,6 @@
     "whatsapp": ""
   },
   {
-    "nome": "Unhas e Alongamento",
-    "profissional": "Thaís Souza",
-    "tecnicas": [
-      { "nome": "Manicure Tradicional", "valor": "R$ 30" },
-      { "nome": "Banho de Gel", "valor": "R$ 80" },
-      { "nome": "Blindagem", "valor": "R$ 70" },
-      { "nome": "Alongamento no Molde F1", "valor": "R$ 120" },
-      { "nome": "Cutilagem", "valor": "R$ 20" },
-      { "nome": "Pedicure Tradicional", "valor": "R$ 40" },
-      { "nome": "Pedicure Gel", "valor": "R$ 90" }
-    ],
-    "link": "https://www.instagram.com/thaissouza.naildesigner/",
-    "whatsapp": "5541987126352"
-  },
-  {
     "nome": "Unhas & Spa dos Pés",
     "profissional": "Suelem Souza",
     "tecnicas": [
