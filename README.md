@@ -33,8 +33,6 @@ Políticas
 
 Galerias e Fotos
 
-(A prévia é apenas descritiva — nada será exibido no próprio site.)
-
 🛠️ Tecnologias Utilizadas
 
 HTML5
