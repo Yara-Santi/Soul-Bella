@@ -41,7 +41,7 @@ Galerias e Fotos
 
 HTML5
 
-CSS3
+CSS
 
 JavaScript
 
