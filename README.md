@@ -2,7 +2,8 @@
 
 Bem-vindo ao repositório do Espaço Soul Bella, um site desenvolvido para apresentar um estúdio de beleza e bem-estar. 
 Nascido de um intenso processo de estudo e aprendizado prático, este projeto é uma plataforma digital de serviços, concebida para funcionar como uma "Base de Conhecimento" centralizada. 
-O objetivo é profissionalizar a presença online do negócio, otimizar a comunicação e melhorar a experiência do cliente.
+O objetivo é profissionalizar a presença online do negócio, otimizar a comunicação e melhorar a experiência do cliente com funcionalidades como por exemplo: formulário e agendamento, onde o cliente preenche o procedimento desejado e é direcionado para o whatsapp da profissional, já com a mensagem pronta informando procedimento e valor a ser pago, entre outras utilidades do site.
+
 
 💄 Sobre o Projeto
 
@@ -17,6 +18,9 @@ Exibir fotos reais do estúdio
 
 Facilitar o contato e navegação dos clientes
 
+Filtrar o conteúdo tratado via whatsapp entre cliente/estúdio
+
+
 🖥️ Prévia do Site
 
 O projeto inclui páginas como:
@@ -25,11 +29,11 @@ Homepage
 
 Técnicas e Serviços
 
-Agendamentos
+Formulário de Agendamentos
 
-Dicas
+Dicas, Curiosidades e Orientações sobre os procedimentos
 
-Políticas
+Políticas do estúdio
 
 Galerias e Fotos
 
