@@ -18,6 +18,8 @@ Exibir fotos reais do estúdio
 
 Facilitar o contato e navegação dos clientes
 
+Conexão com as Redes Sociais 
+
 Filtrar o conteúdo tratado via whatsapp entre cliente/estúdio
 
 
